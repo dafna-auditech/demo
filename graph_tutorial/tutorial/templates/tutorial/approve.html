@@ -1,0 +1,43 @@
+
+
+<!-- <CalendarSnippet> -->
+{% extends "tutorial/layout.html" %}
+{% block content %}
+    <h1>Approve Users</h1>
+    <form action="/approve" method="POST" id="form1">
+        {% csrf_token %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Approve</th>
+                <th scope="col">Display Name</th>
+                <th scope="col">Given Name</th>
+                <th scope="col">email</th>
+                <th scope="col">Issue</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            {% if usersList %}
+                {% for user in usersList %}
+                    <tr>
+                        <td><input id="{{ user.userPrincipalName }}" name="{{ user.userPrincipalName }}" {% if user.selected %} checked {% endif %}type="checkbox" form="form1"/></td>
+                        <td>{{ user.displayName }}</td>
+                        <td>{{ user.givenName }}</td>
+                        <td>{{ user.userPrincipalName }}</td>
+                        <td>{{ user.isIssue }}</td>
+                    </tr>
+                {% endfor %}
+
+            {% endif %}
+            </tbody>
+
+        </table>
+        <div style="text-align: center;">
+            <input type="submit" name="action" value="Approve"/>
+            <input type="submit" name="action" value="Save" />
+        </div>
+    </form>
+{% endblock %}
+<!-- </CalendarSnippet> -->

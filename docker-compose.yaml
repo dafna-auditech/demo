@@ -1,0 +1,25 @@
+version: '3'
+services:
+  demo-app:
+    build: .
+    image: auditech.azurecr.io/demo-app:v1
+    container_name: demo-app
+    environment:
+      port: 5545 
+    ports:
+        - "5545:5545"
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "2019:2019"
+    volumes:
+      - /home/auditech/demo-mk1/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

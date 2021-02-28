@@ -1,0 +1,50 @@
+groupId=$(az group show --name githubActions --query id --output tsv)
+
+  az ad sp create-for-rbac \
+  --scope $groupId \
+  --role Contributor \
+  --sdk-auth
+
+
+
+az ad sp create-for-rbac --scope /subscriptions/b371c1b4-293d-4437-89f3-63c519f74a95/resourceGroups/githubActions --role Contributor --sdk-auth
+  
+
+  {
+  "clientId": "d1f24b71-3b57-483c-8ace-3b537ec09603",
+  "clientSecret": "2BgaXi1h_k6WwgDKOvgt4e9NqmN0OzMde8",
+  "subscriptionId": "b371c1b4-293d-4437-89f3-63c519f74a95",
+  "tenantId": "a1238a5a-b5d1-4baa-8dc9-a747ffb0a8b5",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
+
+
+
+----
+containerRegistry
+groupId=$(az group show --name containerRegistry --query id --output tsv)
+az group show --name containerRegistry --query id --output tsv
+
+az ad sp create-for-rbac --scope /subscriptions/b371c1b4-293d-4437-89f3-63c519f74a95/resourceGroups/containerRegistry --role Contributor --sdk-auth
+
+{
+  "clientId": "820273fe-3410-4ff5-8e5f-9331f36938a5",
+  "clientSecret": "Ja~BC4D_Fp1myiXF1tYTD9-Ie3A9IN1bvn",
+  "subscriptionId": "b371c1b4-293d-4437-89f3-63c519f74a95",
+  "tenantId": "a1238a5a-b5d1-4baa-8dc9-a747ffb0a8b5",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
+
+
+
+Get-AzureADObjectByObjectId -ObjectIds  a0f25659-3477-44a9-927f-d220400919ef

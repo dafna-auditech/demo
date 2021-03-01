@@ -82,7 +82,7 @@ DATABASES = {
 }
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = "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"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

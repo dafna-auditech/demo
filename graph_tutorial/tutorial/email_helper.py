@@ -18,7 +18,7 @@ def send_users_control_email(request):
     users = get_users(request)
     stream = create_users_control_xlsx(users)
 
-    to_email = ['amosg@audit-tech.net','eedry@audit-tech.net']
+    to_email = ['amosg@audit-tech.net','eedry@audit-tech.net', 'mickeym@audit-tech.net']
     subject = "Auditech user control - approve"
     content = Content("text/html charset=UTF-8",
                       "Attached the Users review control")
@@ -41,7 +41,7 @@ def send_users_report_email(request):
     csv_stream = create_users_csv(users)
     stream = create_users_review_xlsx(users)
 
-    to_email = ['amosg@audit-tech.net','eedry@audit-tech.net']
+    to_email = ['amosg@audit-tech.net','eedry@audit-tech.net', 'mickeym@audit-tech.net']
     subject = "Auditech user control - report"
     content = Content("text/html charset=UTF-8",
                       "Please review the attached users and approve the list,<br> notice the system "
@@ -82,7 +82,7 @@ def sendgird_send_email(to, subject, content, attachment):
     sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY)
 
 
-    from_email = "amosg@audit-tech.net"
+    from_email = "dafnap@audit-tech.net"
 
     mail = Mail(from_email=from_email, subject=subject, to_emails=to, plain_text_content=content)
     

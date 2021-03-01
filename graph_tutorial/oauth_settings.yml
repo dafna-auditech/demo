@@ -1,5 +1,5 @@
-app_id: "c4bcfd78-97b3-4922-9577-55ad3d882650"
-app_secret: "fureeYKD51676$%izAJWZ-@"
+app_id: "52661a60-64fe-4517-9f3f-998e24123604"
+app_secret: "GiyQ9._eE2i0Cr1~O0SHzc2dyj_RYD1_K7"
 #redirect: "https://explore.auditech.xyz/callback"
 redirect: "http://localhost:8000/callback"
 scopes: "openid profile offline_access user.read Directory.Read.All calendars.read"

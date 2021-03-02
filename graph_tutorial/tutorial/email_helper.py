@@ -46,6 +46,9 @@ def send_users_report_email(request):
     content = Content("text/html charset=UTF-8",
                       "Please review the attached users and approve the list,<br> notice the system "
                       "<a href='https://explore.auditech.xyz/approve'>click here to approve in Auditech system</a>"
+                      
+                    "<a href='https://audit-tech.webflow.io/approval-page'>click here to approve in Auditech system</a>"
+
                       "automatically filtered to show the users under your care."
     )
 
